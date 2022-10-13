@@ -1,0 +1,37 @@
+Nama Database: (Kreasi Sender Ex: _db_kawal_tps) 
+
+      Structure Table:
+      - Tabel: _tbl_saksi
+      ===================================
+                      id			int(11) auto_increment primary_key
+                    nik		varchar(26) NOT NULL
+		    nama 		varchar(120) NOT NULL
+		    no_hp		varchar(12) NOT NULL
+                    kec		varchar(75) NOT NULL
+		     kel		varchar(75) NOT NULL
+                    tps		int(2) NOT NULL
+   ————————————————————————
+   - Tabel: _tbl_calon
+   ==========================================
+		    id				int(11) auto_increment primary_key
+		    nama_calon      varchar(90) NOT NULL
+		    no_urut		int(2) NOT NULL
+                    foto			varchar(45) NOT NULL
+	
+   - Tabel: _tbl_perolehan_suara
+   ==========================================
+		    id				bigint(11) auto_increment primary_key
+		    no_urut		int(2) NOT NULL
+                    jum_suara	        int(10) NOT NULL
+                    kec			varchar(75) NOT NULL
+		    kel			varchar(75) NOT NULL
+                    tps			int(2) NOT NULL
+		    pengirim		int(11) NOT NULL -> Berelasi dengan _tbl_saksi pada field id
+
+- Tabel: _tbl_users
+   ==========================================
+		    id				int(11) auto_increment primary_key
+		    user_id      		varchar(15) NOT NULL
+		    nama_user		varchar(40) NOT NULL
+                    password		varchar(45) NOT NULL
+		     status		        enum(‘0’,’1’)
